@@ -9,6 +9,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navDeepLink
+import androidx.navigation.toRoute
 import com.xronophobe.dlwndasc.ui.theme.DlwndascTheme
 import kotlinx.serialization.Serializable
 
@@ -38,11 +39,13 @@ fun AppRoot() {
         composable<SecondDestination>(
             deepLinks = listOf(
                 navDeepLink<SecondDestination>(
-                    basePath = "https://dlwndasc/timeline"
+                    basePath = "dlwndasc://items"
                 )
             )
-        ) {
-            SecondScreen()
+        ) { backStackEntry ->
+            val input = backStackEntry.toRoute<SecondDestination>()
+            println(input)
+            SecondScreen(input.itemId)
         }
     }
 }
@@ -51,4 +54,6 @@ fun AppRoot() {
 data object FirstDestination
 
 @Serializable
-data object SecondDestination
+data class SecondDestination(
+    val itemId: String
+)

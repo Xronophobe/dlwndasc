@@ -10,9 +10,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.xronophobe.dlwndasc.ui.theme.DlwndascTheme
 
 @Composable
-fun SecondScreen() {
+fun SecondScreen(itemId: String) {
     Column(verticalArrangement = Arrangement.Center, modifier = Modifier.fillMaxSize()) {
-        Text(text="This is the second screen")
+        Text(text="This is the second screen showing the mf $itemId")
     }
 }
 
@@ -20,6 +20,6 @@ fun SecondScreen() {
 @Preview(showBackground = true)
 fun SecondScreenPreview(){
     DlwndascTheme {
-        SecondScreen()
+        SecondScreen(itemId = "yoooooooooo")
     }
 }

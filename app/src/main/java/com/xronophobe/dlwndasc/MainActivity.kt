@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
 import androidx.compose.material3.ModalDrawerSheet
 import androidx.compose.material3.ModalNavigationDrawer
@@ -61,7 +60,7 @@ fun AppRoot() {
             composable<SecondDestination>(
                 deepLinks = listOf(
                     navDeepLink<SecondDestination>(
-                        basePath = "dlwndasc://items"
+                        basePath = "dlwndasc://linked-items"
                     )
                 )
             ) { backStackEntry ->

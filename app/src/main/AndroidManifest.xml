@@ -31,7 +31,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data android:scheme="dlwndasc" />
-                <data android:host="items" />
+                <data android:host="linked-items" />
             </intent-filter>
         </activity>
     </application>
